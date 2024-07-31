@@ -7,7 +7,8 @@ class SmallSidebuttons extends StatelessWidget {
   final Color bodercolor;
   final String text;
   final String? iconPath;
-  final double size;
+  final double height;
+  final double width;
   final bool isIcon;
 
   SmallSidebuttons({
@@ -16,7 +17,8 @@ class SmallSidebuttons extends StatelessWidget {
     required this.backgroundcolor,
     required this.bodercolor,
     required this.text,
-    required this.size,
+    required this.height,
+    required this.width,
     this.isIcon = false,
     this.iconPath,
   }) : super(key: key);
@@ -24,19 +26,19 @@ class SmallSidebuttons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: size,
-      height: size,
+      width: width,
+      height: height,
       decoration: BoxDecoration(
         border: Border.all(color: bodercolor, width: 1.0),
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(20),
         color: backgroundcolor,
       ),
       child: Center(
         child: isIcon && iconPath != null
             ? SvgPicture.asset(
                 iconPath!,
-                width: size,
-                height: size,
+                width: width,
+                height: height,
               )
             : Text(
                 text,
